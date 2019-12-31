@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taiji v2</title>
+    <style>
+        body{
+            /* 需注意浏览器的最小字号的限制 */
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #eee;
+            /* ======================== */
+            /* 垂直居中对齐，图字纵向排列 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* ======================== */
+        }
+        @media(max-width: 500px){
+            body{font-size:8px;}
+        }
+        
+        div{
+            width: 10em;
+            height: 20em;
+            border-left: 10em solid black;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.25);
+            animation: x  4s 2 linear;
+        }
+        @keyframes x{
+            0% {transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        div::before{
+            content: "";
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            border-radius: 50%;
+            border:3.75em solid black;
+            background-color: white;
+            margin-left: -5em;
+        }
+        div::after{
+            content: "";
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            border-radius: 50%;
+            border:3.75em solid white;
+            background-color: black;
+            margin-left: -5em;
+        }
+        b{
+            margin-top: 1em;
+            font-size: medium;
+        }
+    </style>
+
+</head>
+<body>
+    <div></div>
+    <b>道可道，非常道。</b>
+</body>
+</html>
